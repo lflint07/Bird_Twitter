@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to 'Shots', new_tweet_path %></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<h1>Shots!</h1>	
+<div class="well well-lg">
+	<tbody>
+    <% @tweets. each do |tweet| %>
+		<textarea class="form-control" rows="3">
+    <%= tweet.user.username %>
+			<%= tweet.message %>
+		</textarea>
+			<td><button type="button" class="btn btn-success"><%= link_to 'Edit', edit_tweet_path(tweet) %></button></td>
+			<td><%= link_to 'Destroy', tweet, method: :delete, data: {confirm: 'Are you Sure?'} %></td>
+		<% end %>
+	</tbody>
+
+
+
+</div>
+</div>
